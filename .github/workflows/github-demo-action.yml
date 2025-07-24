@@ -1,11 +1,10 @@
-name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
-on: [push]
+name: "Newman Tests"
+on: [push,pull_request]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     container:
-      image:postman/newman
+      image: postman/newman
     steps:
       - name: Checkout
         uses: actions/checkout@v2
