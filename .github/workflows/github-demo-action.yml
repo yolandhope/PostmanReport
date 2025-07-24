@@ -1,0 +1,13 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    container:
+      image:postman/newman
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run APi Tests
+        run: newman run "Trello.postman_collection.json" -e Trello.postman_environment.json
